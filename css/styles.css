@@ -1,0 +1,334 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(../fonts/mZSs29ggGoaqrCNB3kDfZQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(../fonts/trnbTfqisuuhRVI3i45C5w.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(../fonts/GZMdC02DTXXx8AdUvU2etw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'), url(../fonts/pqisLQoeO9YTDCNnlQ9bfz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+<!--@import url('reset.css');-->
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Ubuntu', Tahoma;
+	line-height: 100%;
+	outline: none;
+	
+}
+
+html {
+	border: 0px;
+}
+
+body {
+	color: #FFF;
+	font-size: 9pt;
+	cursor: default;
+	background: url(../img/logo.png) no-repeat top;
+}
+
+.clear {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	height: 10px;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #d0d9de;
+}
+
+a:hover {
+	color: #FFF;
+}
+
+#cont {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 70;
+	overflow: auto;
+}
+
+.copy {
+	text-shadow: #111 1px 1px 0px;
+	text-align: center;
+	padding: 10px 0px;
+	line-height: 150%;
+}
+
+.copyText {
+	text-shadow: #111 1px 1px 0px;	
+	
+	padding: 5px;
+	line-height: 150%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 10px;
+	font-size: 120%;
+	*min-height: 500px;
+	-webkit-box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.2);
+}
+
+.copyText heading {
+	font-size: 150%;
+	line-height: 200%;
+}
+
+.copyText p {
+	line-height: 110%;
+}
+
+.copyText ul li {
+	line-height: 150%;
+	margin: 0 0 0 50px;
+}
+
+.copyText ol li {
+	line-height: 150%;
+	margin: 0 0 0 25px;
+}
+
+/* ========================================================
+   Top bar
+   ===================================================== */
+#header {
+	z-index: 10000;
+	height: 37px;
+	line-height: 37px;
+	padding-bottom: 2px;
+	color: #ddd;
+	text-shadow: 0 -1px black;
+	background: url(../img/topbar.png) repeat-x;
+	margin-bottom: 20px;
+}
+#header .container {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#header a {
+	line-height: 36px;
+}
+#header ul {
+	list-style: none;
+}
+#header h1 {
+	float: left;
+	font-size: 16px;
+}
+#header h1, #header h1 a {
+	color: #eee;
+}
+#header h1 a {
+	display: block;
+	text-decoration: none;
+}
+#header h1 a:hover {
+	color: #fff;
+}
+#header #nav {
+	float: right;
+	border-left: 1px solid #2f4b56;
+	border-left: 1px solid rgba(255, 255, 255, 0.05);
+	border-right: 1px solid #111;
+}
+#header #nav li {
+	float: left;
+}
+#header #nav a {
+	height: 36px;
+	display: block;
+	padding: 0 15px;
+	color: #d0d9de;
+	border-left: 1px solid #191919;
+	border-right: 1px solid #2f4b56;
+	border-right: 1px solid rgba(255, 255, 255, 0.05);
+	text-decoration: none;
+	cursor: pointer;
+}
+#header #nav a:hover {
+	background: url(../img/topbar-hover.png);
+}
+#header #nav a img {
+	float: left;
+	margin-right: 12px;
+	margin-top: 11px;
+}
+
+#header #nav li.active a, #header #nav a:active {
+	background: url(../img/topbar-active.png);
+	border-right: 0;
+	padding-right: 16px;
+}
+#header #nav span {
+	display: inline-block;
+	vertical-align: text-top;
+	line-height: 16px;
+	font-size: 11px;
+	padding: 0 5px;
+	color: #fff;
+	text-shadow: 0 1px #902a27;
+	border-radius: 2px;
+	margin-left: 10px;
+	background-color: #e93631;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f65d5f), color-stop(100%, #e93631));
+	background-image: -webkit-linear-gradient(top, #f65d5f, #e93631);
+	background-image: -moz-linear-gradient(top, #f65d5f, #e93631);
+	background-image: -ms-linear-gradient(top, #f65d5f, #e93631);
+	background-image: -o-linear-gradient(top, #f65d5f, #e93631);
+	background-image: linear-gradient(top, #f65d5f, #e93631);
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.2);
+}
+
+div.header div img#logo {
+	float: left;
+}
+
+sup {
+	font-size: 13px;
+}
+
+.footer {
+	width: 100%;
+	*height: 100px;
+	background: #FFF;
+	position: relative;
+	height:125px;
+	color: #000;
+	bottom: 0px;	 
+	-webkit-box-shadow: inset 0px 4px 2px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: inset 0px 4px 2px 0px rgba(0,0,0,0.25);
+	box-shadow: inset 0px 4px 2px 0px rgba(0,0,0,0.25);
+}
+
+.logo {
+	float: right;
+	margin-right: 15%;
+	padding: 10px 10px 10px 0;
+}
+
+.line {
+	float: left;
+	margin-left: 15%;
+	padding: 10px 0 0 10px;
+	color: #333;
+	
+}
+
+.line p {
+	line-height: 150%;	
+}
+
+/*.grid {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 10px;			
+	clear: both;
+	
+}
+.gridLeft {
+	width: 32%;	
+	float: left;
+	padding: 2px;
+	background:#FFF;
+}
+
+.gridRight {
+	width: 32%;
+	padding: 2px;
+	float: right;	
+	background:#FFF;
+}
+
+.gridCenter {
+	*width: 32%;	
+	padding: 2px;	
+	*float: right;
+	margin-left: 33%;
+	margin-right: 33%;
+	background:#FFF;	
+}*/
+
+.gridContainer {
+	margin-left: 20%;
+	margin-right: 20%;
+	
+	
+}
+
+.grid {
+	
+	display: inline;	
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 31.5%;
+	*height: inherit;
+	*border: #F00 1px dotted;
+	background-color: #FFF;
+	padding: 2px;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+	
+		
+	
+}
+
+
+
+.gridTitle {
+	font-weight: 600;	
+	font-size: 110%;	
+	color: #333;	
+	line-height: 150%;	
+}
+
+.gridImage {
+	float: left;
+	background-color: #FFF;	
+}
+
+.gridText {
+	float: right;
+	font-size: 90%;
+	color: #333;
+	background-color: #FFF;	
+	width: 125px;
+}
+
+.gridText ul li{
+	line-height: 150%;
+}
+
+
+	
