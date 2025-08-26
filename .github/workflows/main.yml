@@ -22,7 +22,7 @@ jobs:
           
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ secrets.S3_BUCKET_REGION }}
       
       - name: Sync files to S3
         run: |
