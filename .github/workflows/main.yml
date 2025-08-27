@@ -1,56 +1,37 @@
-# GitHub Actions Workflow: Sync to AWS S3 & Invalidate CloudFront.
-#
-# This workflow automates two processes:
-# 1. Syncs your repository's files to an AWS S3 bucket on push to 'main'
-# 2. Invalidates a CloudFront distribution to serve the new files.
-
 name: Deploy to S3 and Invalidate CloudFront
 
-# Controls when the workflow will run.
 on:
   push:
     branches:
       - master
 
 jobs:
-  # The single job in this workflow, named 'deploy'
+  
   deploy:
-    # The type of runner that the job will run on.
+   
     runs-on: ubuntu-latest
-
-    # A sequence of tasks that will be executed as part of the job
-    steps:
-      # Step 1: Check out the repository's code
+    
+    steps:      
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # Step 2: Configure AWS credentials
+      
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
-        with:
-          # Your AWS Access Key ID, stored as a GitHub secret
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          # Your AWS Secret Access Key, stored as a GitHub secret
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # The AWS region where your S3 bucket and CloudFront are.
-          # IMPORTANT: Change 'us-east-1' to your region.
+        with:          
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}          
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}          
           aws-region: ${{ secrets.AWS_REGION }}
-
-      # Step 3: Sync files to the S3 bucket
+      
       - name: Sync files to S3
         run: |
           # The 'aws s3 sync' command efficiently transfers files.
           # IMPORTANT: Replace 'your-bucket-name' with your actual bucket name.
           aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete
-
-      # Step 4: Invalidate CloudFront distribution
-      # This step ensures that the latest version of the files is served.
+      
       - name: Invalidate CloudFront Distribution
         uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          # Your CloudFront Distribution ID, stored as a GitHub secret
-          DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          # The paths to invalidate. '/*' invalidates everything.
+        env:          
+          DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}          
           PATHS: "/*"
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
