@@ -1,4 +1,4 @@
-# GitHub Actions Workflow: Sync to AWS S3 & Invalidate CloudFront
+# GitHub Actions Workflow: Sync to AWS S3 & Invalidate CloudFront.
 #
 # This workflow automates two processes:
 # 1. Syncs your repository's files to an AWS S3 bucket on push to 'main'
